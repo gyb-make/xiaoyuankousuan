@@ -7,6 +7,20 @@ import os
 import pyautogui
 pyautogui.FAILSAFE = False
 
+#数字围成一个框把数字包起来就行
+#左边数字的左上角
+l_lup_x = 1751
+l_lup_y = 449
+#左边数字的右下角
+l_rdown_x = 1873
+l_rdown_y = 543
+#右边数字的左上角
+r_lup_x = 1991
+r_lup_y = 445
+#右边数字的右下角
+r_rdown_x = 2112
+r_rdown_y = 539
+
 # tesseract.exe路径
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
@@ -83,8 +97,8 @@ if __name__ == "__main__":
     while 1:
         if  not keyboard.is_pressed('space'):
             if is_valid_num:
-                left_result = get_box_num(1751, 449,1873, 543)
-                right_result = get_box_num(1991, 445,2112, 539)
+                left_result = get_box_num(l_lup_x, l_lup_y,l_rdown_x, l_rdown_y)
+                right_result = get_box_num(r_lup_x, r_lup_y,r_rdown_x, r_rdown_y)
                 print("识别数字：", left_result,right_result)
                 if left_result > right_result:
                     dayu()
