@@ -4,8 +4,6 @@ import time
 import keyboard
 import ctypes
 import os
-import pyautogui
-pyautogui.FAILSAFE = False
 
 #数字围成一个框把数字包起来就行
 #左边数字的左上角
